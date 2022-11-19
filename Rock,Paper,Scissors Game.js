@@ -1,58 +1,53 @@
-let playerSelection = prompt("Choose your weapon").toLowerCase();
 let computerSelection = getComputerChoice();
-let playerScore = 0;
+let playerScore = 0;  
 let computerScore = 0;
 
-function getComputerChoice() {
+function getComputerChoice() { //Function to get random computer choice 
   let gameRul = ["rock", "paper", "scissors"];
   let randNum = Math.floor(Math.random() * gameRul.length);
   return gameRul[randNum];
 }
 
-function playRound(playerSelection, computerSelection) {
-  if (playerSelection === "rock" && computerSelection === "paper") {
-    computerScore = computerScore++;
-    return "You lose! Computer won :) Paper beats rock";
-  } else if (playerSelection === "paper" && computerSelection === "rock") {
-    playerScore = playerScore++;
-    return "You won! Computer lost :) Paper beats rock";
-  } else if (playerSelection === "scissors" && computerSelection === "rock") {
-    computerScore = computerScore++;
-    return "You lost! Computer won :) Rock beats scissors";
-  } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    playerScore = playerScore++;
-    return "You won! Computer lost :) Rock beats scissors";
-  } else if (playerSelection === "rock" && computerSelection === "rock") {
-    return "It a tie! nobody won :) Rock cannot beat Rock";
-  } else if (playerSelection === "paper" && computerSelection === "paper") {
-    return "It a tie! nobody won :) Paper cannot beat paper";
-  } else if (playerSelection === "paper" && computerSelection === "scissors") {
-    computerScore = computerScore++;
-    return "Computer won :) Scissors  beats paper";
-  } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    playerScore = playerScore++;
-    return "You won :) Scissors beats paper";
-  } else if (
-    playerSelection === "scissors" &&
-    computerSelection === "scissors"
-  ) {
-    return "It a tie! nobody won :) Scissors cannot beat Scissors";
-  } else {
-    return "Invalid input";
+function playRound(playerSelection, computerSelection) { //Function to receive user input and computer choice 
+  if (playerSelection === computerSelection) {
+     console.log(`The game is tie ${playerSelection} cannot beat ${computerSelection}`)
+    ;
   }
+  if (
+    (playerSelection === "rock" && computerSelection === "paper") ||
+    (playerSelection === "scissors" && computerSelection === "rock") ||
+    (playerSelection === "paper" && computerSelection === "scissors")
+  ) {
+    computerScore++;
+    console.log(`computer score is ${computerScore} and playerScore is ${playerScore}`);
+  }
+  if (
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    playerScore++;
+    console.log(`player score is  ${playerScore} and computer score ${computerScore}`);
+  }
+  else if (computerScore > playerScore) {
+   console.log("Computer Won this round")
+  } 
+  if (playerScore > computerScore) {
+    console.log("Player Won this round")
+  }
+  if (playerScore === computerScore) { 
+  console.log("It a tie Nobody won")
+  }
+  
 }
 
-function game() {
-  for (let i = 0; i < 5; i++) {
-    playRound(playerSelection, computerSelection);
-  }
-  if (playerScore > computerScore) {
-    return "You won";
-  } else {
-    return "Computer Won";
+function game() { //Function to store rounds of games and keep scores updated 
+  for (let i = 0; i < 5; i++) { //Creates a loop of 5 rounds 
+    let playerSelection = prompt("Choose your weapon").toLowerCase(); //Coerce user input to lowercase
+    playRound(playerSelection, computerSelection); //Executing the playround()
+    
   }
 }
 
 game();
 
-// console.log(playerRound(playerSelection, computerSelection));
