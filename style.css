@@ -1,0 +1,39 @@
+:root{
+    --green : #044040;
+    --font: 'Ubuntu', sans-serif;
+}
+
+h1{
+   color: white;
+   font-family: var(--font);
+   font-size: 70px;
+   text-align: center;
+   margin-bottom: 0;
+}
+p{
+    font-family: sans-serif;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+.player{
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+.weapon{
+    margin-top: 30px;
+    margin-bottom: 90px;
+}
+body{
+    background-color: var(--green);
+}
+div{
+    display: flex;
+    gap: 90px;
+    justify-content: center;
+}
+div>img{
+    width: 15%;
+    border: 2px solid white;
+    padding: 15px;
+}
