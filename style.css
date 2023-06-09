@@ -34,9 +34,29 @@ div{
 }
 button{
     padding: 1%;
+    font-family: sans-serif;
+    font-size: 20px;
+    border-radius: 9px;
+    border-style: none;
+}
+button:hover{
+    background-color: grey;
+    color: white;
 }
 div.score-record>p{
     margin-top: 10px;
     margin-right: 60px;
     font-size: 50px;
+}
+
+@media(max-width:414px){
+h1{
+    font-size: 30px;
+}
+div{
+    gap: 30px;
+}
+button{
+    padding: 3% ;
+}
 }

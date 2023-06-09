@@ -31,10 +31,8 @@ function getComputerChoice() {
   return choiceBtn[Math.floor(Math.random() * choiceBtn.length)].innerText;  // Return a random button's text content from the choiceBtn array
 }
 
+// Function to receive user input and computer choice
 function playRound(playerSelection, computerSelection) {
-  playerSelection = playerSelection;  // Assign the player's selection to the playerSelection variable (unnecessary assignment)
-  computerSelection = getComputerChoice();  // Call the getComputerChoice function to get a new random computer selection
-  // Function to receive user input and computer choice
   if (playerSelection === computerSelection) {
     return `The game is tie ${playerSelection} cannot beat ${computerSelection}`;  // Return a tie message if the selections are the same
   }
