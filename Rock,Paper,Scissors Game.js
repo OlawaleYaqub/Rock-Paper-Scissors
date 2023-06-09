@@ -60,8 +60,8 @@ function playRound(playerSelection, computerSelection) {
 
 function declareWinner() {
   if (playerScore === 5 && computerScore < 5) {
-    result.textContent = 'Game Over. You Win!';  // Display "Game Over. You Win!" if the player's score is 5 or more and the computer's score is less than 5
+    result.textContent = 'Game Over. You Win!';  // Display "Game Over. You Win!" if the player's score is 5  and the computer's score is less than 5
   } else if (playerScore < 5 && computerScore ===5) {
-    result.textContent = 'Game Over. You Lose!';  // Display "Game Over. You Lose!" if the player's score is less than 5 and the computer's score is 5 or more
+    result.textContent = 'Game Over. You Lose!';  // Display "Game Over. You Lose!" if the player's score is less than 5 and the computer's score is 5 
   }
 }
