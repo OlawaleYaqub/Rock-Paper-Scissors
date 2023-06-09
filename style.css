@@ -32,10 +32,8 @@ div{
     gap: 90px;
     justify-content: center;
 }
-div>img{
-    width: 15%;
-    border: 2px solid white;
-    padding: 15px;
+button{
+    padding: 1%;
 }
 div.score-record>p{
     margin-top: 10px;
